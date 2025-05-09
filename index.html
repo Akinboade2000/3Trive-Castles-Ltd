@@ -36,8 +36,23 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
+        <div class="video-background">
+            <video autoplay muted loop id="video1">
+                <source src="video/1.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop id="video2">
+                <source src="video/2.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop id="video3">
+                <source src="video/3.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop id="video4">
+                <source src="video/4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
                 <h1>Premium Sand Dredging & Land Reclamation</h1>
                 <p>3Trive Castles Ltd is the leading sand dredging company in Lagos State, delivering high-quality sharp sand and land reclamation services with efficiency and reliability.</p>
                 <a href="#contact" class="btn">Get In Touch</a>
@@ -53,13 +68,19 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="img/abt.png" alt="Dredging Operation">
+                    <img src="img/high-angle-shot-two-excavators-building-site.jpg" alt="Dredging Operation">
                 </div>
                 <div class="about-text">
                     <h3>Your Trusted Sand Dredging Partner</h3>
-                    <p>3Trive Castles Ltd is the leading sand dredging company in Lagos State, Nigeria. Our dredging site is located at Lagos and we have a fleet of dumping trucks that allow us to deliver sharp sand to customers across the state quickly and efficiently.</p>
-                    <p>We are committed to providing our customers with prompt service delivery and accurate supply of their sand requests at competitive prices. Our team of experienced professionals ensures that every project meets the highest quality standards.</p>
-                    <p>At 3Trive Castles, we understand that time is money. That's why we make it our priority to deliver your sand as quickly as possible while maintaining rigorous quality control processes to ensure our sand meets your exact specifications.</p>
+                    <div class="about-summary">
+                        <p>3Trive Castles Ltd is the leading sand dredging company in Lagos State, Nigeria. Our dredging site is located at Lagos and we have a fleet of dumping trucks that allow us to deliver sharp sand to customers across the state quickly and efficiently.</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="about-full" style="display: none;">
+                        <p>We are committed to providing our customers with prompt service delivery and accurate supply of their sand requests at competitive prices. Our team of experienced professionals ensures that every project meets the highest quality standards.</p>
+                        <p>At 3Trive Castles, we understand that time is money. That's why we make it our priority to deliver your sand as quickly as possible while maintaining rigorous quality control processes to ensure our sand meets your exact specifications.</p>
+                        <button class="read-less-btn">Read Less</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,12 +150,32 @@
                     <img src="img/K. Bada .jpg" alt="CEO" class="team-img">
                     <h3>Engr. Kamar k. Bada</h3>
                     <p>Executive Chairman</p>
+                    <div class="profile-summary">
+                        <p>Kamar K. Bada is a seasoned professional with over 20 years of post-graduate experience in the upstream Oil and Gas industry...</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="profile-full" style="display: none;">
+                        <p>Kamar K. Bada is a seasoned professional with over 20 years of post-graduate experience in the upstream Oil and Gas industry, culminating in senior project management and execution roles at ExxonMobil. His foundation in engineering was laid at Obafemi Awolowo University, where he earned a degree in Civil Engineering, further enhanced by an MSc in Oil & Gas Engineering from Robert Gordon University, Aberdeen.</p>
+                        <p>During his distinguished career at ExxonMobil, Kamar navigated a diverse portfolio of projects, demonstrating strong leadership and execution capabilities. Following his successful tenure, Kamar transitioned his expertise into entrepreneurship, establishing 3trive Castles Ltd. This thriving dredging and haulage company plays a crucial role in the construction sector across Lagos State, notably serving as a key supplier of sharp sands for the ambitious Lagos/Calabar Coastal Road project.</p>
+                        <p>Committed to continuous growth and development, Kamar has invested in leadership and technical training from globally recognized institutions. His credentials include certifications from the Project Management Leadership program at the University of North Carolina Kenan-Flagler Business School (USA), the General Leadership program at Thunderbird School of Global Management (Belgium), and the Enterprise Leadership program, also at the University of North Carolina Kenan-Flagler Business School (USA).</p>
+                        <p>Kamar K. Bada's profile showcases a blend of robust technical expertise, proven leadership in a major global industry, and successful entrepreneurial drive within Nigeria's burgeoning infrastructure sector.</p>
+                        <button class="read-less-btn">Read Less</button>
+                    </div>
                 </div>
-                
+            
                 <div class="team-member">
                     <img src="img/Kamal Adeola.jpg" alt="Quality Manager" class="team-img">
                     <h3>Kamal Adeola Adeniran</h3>
                     <p>Chief Executive Officer</p>
+                    <div class="profile-summary">
+                        <p>Kamal A. Adeniran is a seasoned site construction practitioner bringing over 15 years of hands-on experience to the built environment...</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="profile-full" style="display: none;">
+                        <p>Kamal A. Adeniran is a seasoned site construction practitioner bringing over 15 years of hands-on experience to the built environment. As a co-founder and the Chief Executive Officer of 3trive Castle Ltd., a leading dredging and haulage company in Lagos State, Kamal has demonstrated exceptional leadership and a deep understanding of the critical logistical underpinnings of successful construction projects.</p>
+                        <p>His extensive experience spans a diverse portfolio of construction activities, ranging from numerous building projects to significant road construction initiatives. This broad exposure has equipped Kamal with a comprehensive perspective on the challenges and opportunities inherent in the construction sector. His practical insights and strategic vision have been instrumental in establishing 3trive Castle Ltd. as a key player in the Lagos State construction ecosystem.</p>
+                        <button class="read-less-btn">Read Less</button>
+                    </div>
                 </div>
             </div>
         </div>
