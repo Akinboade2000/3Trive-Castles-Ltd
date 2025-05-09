@@ -30,6 +30,23 @@
                 });
             });
 
+            // Video Background Rotation
+            const videos = document.querySelectorAll('.video-background video');
+            let currentVideo = 0;
+
+            function rotateVideos() {
+            videos.forEach(video => video.classList.remove('active'));
+            videos[currentVideo].classList.add('active');
+            currentVideo = (currentVideo + 1) % videos.length;
+            videos[currentVideo].play(); // Play the next video
+            }
+
+            // Start with first video active
+            if (videos.length > 0) {
+                videos[0].classList.add('active');
+                setInterval(rotateVideos, 5000); // Change video every 5 seconds
+            }
+
             // Contact Form Submission to WhatsApp
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
@@ -89,6 +106,47 @@
                     header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
                 }
             });
+
+            // Expandable Profile Functionality
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const member = this.closest('.team-member');
+                    const summary = member.querySelector('.profile-summary');
+                    const fullProfile = member.querySelector('.profile-full');
+        
+                    summary.style.display = 'none';
+                    fullProfile.style.display = 'block';
+                    member.classList.add('expanded');
+                });
+            });
+
+            document.querySelectorAll('.read-less-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const member = this.closest('.team-member');
+                    const summary = member.querySelector('.profile-summary');
+                    const fullProfile = member.querySelector('.profile-full');
+        
+                    summary.style.display = 'block';
+                    fullProfile.style.display = 'none';
+                    member.classList.remove('expanded');
+                });
+            });
+
+            // About Section Read More/Less functionality
+            const aboutReadMore = document.querySelector('.about-text .read-more-btn');
+            const aboutReadLess = document.querySelector('.about-text .read-less-btn');
+
+            if (aboutReadMore && aboutReadLess) {
+                aboutReadMore.addEventListener('click', function() {
+                document.querySelector('.about-summary').style.display = 'none';
+                document.querySelector('.about-full').style.display = 'block';
+            });
+
+            aboutReadLess.addEventListener('click', function() {
+                document.querySelector('.about-full').style.display = 'none';
+                document.querySelector('.about-summary').style.display = 'block';
+            });
+            }
             
             // Active Link Highlighting
             const sections = document.querySelectorAll('section');
