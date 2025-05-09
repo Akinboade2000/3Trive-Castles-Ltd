@@ -81,7 +81,7 @@ header {
 
 /* Hero Section */
 .hero {
-    height: 80vh; /* Reduced from 100vh */
+    height: 70vh; /* Reduced from 100vh */
     min-height: 500px; /* Ensures it doesn't get too small */
     display: flex;
     align-items: center;
@@ -572,7 +572,7 @@ footer {
         font-size: 1.1rem;
     }
     .hero {
-        height: 70vh;
+        height: 60vh;
         min-height: 450px;
     }
     .video-background,
@@ -669,7 +669,7 @@ footer {
     }
     
     .hero {
-        height: 50vh;
+        height: 60vh;
         min-height: 350px;
     }
     .video-background,
