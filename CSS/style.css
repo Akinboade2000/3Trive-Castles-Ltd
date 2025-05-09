@@ -82,8 +82,6 @@ header {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('../img/tip.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
@@ -121,6 +119,53 @@ header {
 
 .btn:hover {
     background: #ff8c00;
+}
+
+/* Video Background Styles */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.video-background video.active {
+    opacity: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+    overflow: hidden;
 }
 
 /* About Section */
@@ -179,6 +224,38 @@ header {
 
 .about-text p {
     margin-bottom: 1.5rem;
+}
+
+/* About Section Expandable Text */
+.about-summary {
+    display: block;
+}
+
+.about-full {
+    display: none;
+}
+
+.about-text .read-more-btn,
+.about-text .read-less-btn {
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.about-text .read-more-btn:hover,
+.about-text .read-less-btn:hover {
+    background: #ff8c00;
+}
+
+/* Animation for expanding content */
+.about-content {
+    transition: all 0.3s ease;
 }
 
 /* Services Section */
@@ -249,6 +326,47 @@ header {
 .team-member p {
     color: #ff8c00;
     font-weight: 500;
+}
+
+/* Team Member Profile Styles */
+.team-member {
+    position: relative;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.profile-summary {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.profile-full {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.read-more-btn, .read-less-btn {
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.read-more-btn:hover, .read-less-btn:hover {
+    background: #ff8c00;
+}
+
+.team-member.expanded {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -414,58 +532,173 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-img, 
+    .about-text {
+        flex: none;
+        width: 100%;
+    }
+    
+    .team-container,
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem;
     }
-
+    
     .nav-links {
+        display: none;
         flex-direction: column;
         width: 100%;
-        display: none;
+        margin-top: 1rem;
     }
-
+    
     .nav-links.active {
         display: flex;
     }
-
+    
     .nav-links li {
         margin: 0;
-        padding: 1rem 0;
+        padding: 0.8rem 0;
         border-bottom: 1px solid #eee;
     }
-
+    
     .hamburger {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
         position: absolute;
         top: 1.5rem;
         right: 1rem;
     }
-
+    
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #333;
+        border-radius: 3px;
+    }
+    
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .section {
-        padding: 3rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
+    
     .section-title h2 {
         font-size: 2rem;
     }
+    
+    .service-card,
+    .team-member {
+        padding: 1.5rem;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
     .btn {
-        padding: 0.6rem 1.5rem;
+        padding: 0.7rem 1.5rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services-container,
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-icon {
+        font-size: 2.5rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links,
+    .footer-newsletter {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+    
+    .about-text h3,
+    .contact-info h3 {
+        font-size: 1.5rem;
     }
 }
